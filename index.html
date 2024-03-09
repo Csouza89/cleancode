@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>AULA CLEAN CODE</h1>
+
+    <label for="primeiroValor">Valor:</label>
+    <input type="text" id="primeiroValor"/>
+    <br><br>
+    <label for="segundoValor">Valor:</label>
+    <input type="text" id="segundoValor"/>
+    <br><br>
+
+    <input type="button" value="Somar" onclick="somar()">
+    <br><br>
+
+    <input type="button" value="Subtrair" onclick="somar()">
+    <br><br>
+
+    <label for="resultado">Valor:</label>
+    <input type="text" id="resultado" readonly/>
+
+    <script>
+        function calculadora(tipoOperacao){
+            var primeiroValorHTML = document.getElementById("primeiroValor").value
+            var segundoValorHTML = document.getElementById("segundoValor").value
+        }
+        //esta funcao serve para somar
+        function somar(){
+            
+            if(ValidarOperacaoMatematica(primeiroValor, segundoValor)){
+                return 
+            }
+        }
+
+        function Subtrair(){
+            var primeiroValor=document.getElementById("primeiroValor").value;
+            var segundoValor=document.getElementById("segundoValor").value;
+
+            logar("o valor de a:",primeiroValorHTML);
+            logar("o valor de b:",segundoValorHTML);
+
+            var primeiroValor = parseInt(primeiroValorHTML);
+            var segundoValor = parseInt(segundoValorHTML);
+
+            if(primeiroValor>0 && segundoValor>0){
+                var resultado = primeiroValor - segundoValor ;
+                Resultado(resultado);
+            }
+        }
+
+        function ValidarOperacaoMatematica(primerioNumero,segundoNumero){
+            if(ValidarNumeroPositivo(primeiroNumero) && 
+            ValidarNumeroPositivo(segundoNumero)){
+                return false;
+            }
+            return false;
+        }
+
+        function ValidarNumerosPositivos(numero){
+            if( numero > 0){
+                return true;
+            }
+            return false;
+        }
+
+        function Resultado(resultado){
+            document.getElementById("resultado").value = resultado;
+        }
+
+        function logar(mensagem){
+            console.log(mensagem);
+        }
+            //var c = parseInt(a) + parseInt(b);//converte texto em soma
+
+            //document.getElementById("c").value = c;
+        
+    </script>
+
+</body>
+</html>
